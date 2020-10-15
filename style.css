@@ -1,0 +1,35 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    text-align: center;
+
+}
+
+.bingo-board {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 2px;
+    margin: auto;
+    background-color: #ff9899;
+    border: 2px solid #ff9899;
+}
+
+.board-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    min-width: 60px;
+    background-color: white;
+}
+
+.picked {
+    background-color: #98d0ff;
+}
+
+.board-cell:hover {
+    cursor: pointer;
+}

@@ -1,21 +1,22 @@
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #ff989a82;
 }
 
 h1 {
     text-align: center;
-
+    color: #fff;
+    padding: 25px 10px;
 }
 
 .bingo-board {
     max-width: 50%;;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
-    grid-gap: 2px;
     margin: auto;
+    box-shadow: 4px 3px 6px rgba(0,0,0,0.2);
     background-color: #ff9899;
-    border: 2px solid #ff9899;
+    border: 2px solid #fff;
 }
 
 .board-cell {
@@ -24,7 +25,9 @@ h1 {
     align-items: center;
     min-height: 60px;
     min-width: 60px;
-    background-color: white;
+    color: #fff;
+    border: 2px solid #fff;
+    background-color: #ff9899;
 }
 
 .picked {
@@ -33,4 +36,57 @@ h1 {
 
 .board-cell:hover {
     cursor: pointer;
+}
+
+.button-wrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.random-button {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    width: 145px;
+    margin: 50px 10px 10px 10px;
+    padding: 10px 15px;
+    background-color: #ff9899;
+    border: 2px solid #fff;
+    color: white;
+    box-shadow: 4px 3px 6px rgba(0,0,0,0.2);
+    transition: all .2s ease;
+}
+
+.random-button:hover {
+    cursor: pointer;
+    background-color: #ff989a82;
+}
+
+.random-button:focus {
+    outline: #fff;
+}
+
+.random-button:active {
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+}
+
+.random-button:active ~ .random-number {
+    background-color: #fff;
+}
+
+.random-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: white;
+    width: 100px;
+    height: 70px;
+    margin: 20px 0;
+    padding: 25px 20px;
+    background-color: #98d0ff;
+    border: 2px solid #fff;
+    box-shadow: 4px 3px 6px rgba(0,0,0,0.2);
+    transition: background-color .2s ease-in;
 }

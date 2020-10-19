@@ -27,8 +27,8 @@ function CreateListOfRandomNumbers() {
 function AssignCellContent() {
     let numbers = CreateListOfRandomNumbers();
     let cells = document.querySelectorAll(".board-cell");
-    var counter = 0;
-    var centrePosition = 12;
+    let counter = 0;
+    const centrePosition = 12;
     cells.forEach(element => {
         if (counter == centrePosition) {
             element.innerHTML = "&#10033;";
@@ -41,5 +41,13 @@ function AssignCellContent() {
     });
 }
 
+function HandleOnClickRandomNumberButton() {
+    document.querySelector(".random-button").addEventListener('click', function (event) {
+        let randNum = getRandomInt(1, 26);
+        document.querySelector(".random-number").innerHTML = randNum;
+    });
+}
+
 ChangeCellColorOnClick();
 AssignCellContent();
+HandleOnClickRandomNumberButton();

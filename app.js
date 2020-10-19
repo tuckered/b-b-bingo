@@ -1,8 +1,10 @@
-document.addEventListener('click', function (event) {
-    if (event.target.classList.contains("board-cell")) {
-        event.target.classList.toggle("picked")
-    }
-});
+function ChangeCellColorOnClick() {
+    document.addEventListener('click', function (event) {
+        if (event.target.classList.contains("board-cell")) {
+            event.target.classList.toggle("picked")
+        }
+    });
+}
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -29,7 +31,8 @@ function AssignCellContent() {
     var centrePosition = 12;
     cells.forEach(element => {
         if (counter == centrePosition) {
-            element.innerHTML = "&#10033;"
+            element.innerHTML = "&#10033;";
+            element.classList.add("picked");
         }
         else {
             element.innerHTML = numbers[counter];
@@ -38,4 +41,5 @@ function AssignCellContent() {
     });
 }
 
+ChangeCellColorOnClick();
 AssignCellContent();

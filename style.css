@@ -9,6 +9,7 @@ h1 {
 }
 
 .bingo-board {
+    max-width: 50%;;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     grid-gap: 2px;

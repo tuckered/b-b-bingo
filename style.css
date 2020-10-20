@@ -10,14 +10,16 @@ h1 {
 }
 
 .bingo-board {
-    max-width: 50%;;
+    max-width: 50%;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     margin: auto;
+    margin-bottom: 50px;
     box-shadow: 4px 3px 6px rgba(0,0,0,0.2);
     background-color: #ff9899;
     border: 2px solid #fff;
 }
+
 
 .board-cell {
     display: flex;
@@ -30,7 +32,7 @@ h1 {
     background-color: #ff9899;
 }
 
-.picked {
+.selected-cell {
     background-color: #98d0ff;
 }
 
@@ -45,12 +47,13 @@ h1 {
     align-items: center;
 }
 
-.random-button {
+.random-button,
+.reset-button {
     font-family: 'Press Start 2P', cursive;
     text-align: center;
     width: 145px;
-    margin: 50px 10px 10px 10px;
     padding: 10px 15px;
+    margin: 10px;
     background-color: #ff9899;
     border: 2px solid #fff;
     color: white;
@@ -58,7 +61,8 @@ h1 {
     transition: all .2s ease;
 }
 
-.random-button:hover {
+.random-button:hover, 
+.reset-button:hover {
     cursor: pointer;
     background-color: #ff989a82;
 }

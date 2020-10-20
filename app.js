@@ -1,8 +1,9 @@
 function ChangeCellColorOnClick() {
-    document.addEventListener('click', function (event) {
-        if (event.target.classList.contains("board-cell")) {
-            event.target.classList.toggle("picked")
-        }
+    let cells = document.querySelectorAll(".board-cell");
+    cells.forEach(element => {
+        element.addEventListener('click', function (event) {
+            event.target.classList.toggle("selected-cell");
+        })
     });
 }
 
@@ -32,7 +33,7 @@ function AssignCellContent() {
     cells.forEach(element => {
         if (counter == centrePosition) {
             element.innerHTML = "&#10033;";
-            element.classList.add("picked");
+            element.classList.add("selected-cell");
         }
         else {
             element.innerHTML = numbers[counter];
@@ -42,12 +43,19 @@ function AssignCellContent() {
 }
 
 function HandleOnClickRandomNumberButton() {
-    document.querySelector(".random-button").addEventListener('click', function (event) {
+    document.querySelector(".random-button").addEventListener('click', function () {
         let randNum = getRandomInt(1, 26);
         document.querySelector(".random-number").innerHTML = randNum;
     });
 }
 
+function ResetGame() {
+    document.querySelector(".reset-button").addEventListener('click', function () {
+        AssignCellContent();
+    })
+}
+
 ChangeCellColorOnClick();
 AssignCellContent();
 HandleOnClickRandomNumberButton();
+ResetGame();
